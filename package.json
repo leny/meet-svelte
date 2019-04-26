@@ -1,0 +1,28 @@
+{
+  "name": "meet-svelte",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Just some Svelte test project, discovering the tech",
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leny/meet-svelte.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leny/meet-svelte/issues"
+  },
+  "homepage": "https://github.com/leny/meet-svelte#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-svelte": "^3.0.0",
+    "svelte": "^3.1.0"
+  }
+}

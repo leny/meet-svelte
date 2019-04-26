@@ -8,6 +8,9 @@
 
 import App from "./components/app.svelte";
 
-const app = new App({
-    target: document.body,
+const root = new App({
+    target: document.querySelector("#root"),
+    props: {},
 });
+
+export default root;
