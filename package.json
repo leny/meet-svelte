@@ -4,8 +4,8 @@
   "private": true,
   "description": "Just some Svelte test project, discovering the tech",
   "scripts": {
-    "dev": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "build": "npx cross-env NODE_ENV=production webpack",
+    "dev": "npx webpack-dev-server --content-base public"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,13 @@
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
+    "cross-env": "^5.2.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svelte": "^3.0.0",
-    "svelte": "^3.1.0"
+    "svelte": "^3.1.0",
+    "svelte-loader": "^2.13.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
   }
 }
