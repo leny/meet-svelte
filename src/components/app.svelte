@@ -1,5 +1,9 @@
 <script>
-	let name = 'world';
+    let count = 0;
+
+    const handleClick = () => count += 1;
 </script>
 
-<h1>Hello {name.toUpperCase()}!</h1>
+<button on:click={handleClick}>
+    Clicked {count} time{count > 1 ? "s" : ""}
+</button>
