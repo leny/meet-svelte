@@ -1,3 +1,10 @@
+{#if showInfo}
+<Nested answer="{42}" />
+<Info {...pkg} />
+{/if}
+
+<button on:click="{toggle}">{showInfo ? 'Hide' : 'Show'} informations</button>
+
 <script>
     import Nested from "./nested.svelte";
     import Info from "./info.svelte";
@@ -8,9 +15,8 @@
         speed: "blazing",
         url: "https://svelte.dev",
     };
+
+    let showInfo = false;
+
+    const toggle = () => (showInfo = !showInfo);
 </script>
-
-<Nested answer="{42}" />
-<Nested />
-
-<Info {...pkg} />
