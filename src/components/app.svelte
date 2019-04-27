@@ -1,13 +1,16 @@
 <script>
-    let numbers=[1,2,3];
+    import Nested from "./nested.svelte";
+    import Info from "./info.svelte";
 
-    const addNumber = () => numbers = [...numbers, (numbers.length + 1)];
-
-    $: sum = numbers.reduce((acc, itm)=> acc + itm, 0);
+    const pkg = {
+        name: "svelte",
+        version: "3",
+        speed: "blazing",
+        url: "https://svelte.dev",
+    };
 </script>
 
-<p>{numbers.join(" + ")} = {sum}</p>
+<Nested answer="{42}" />
+<Nested />
 
-<button on:click={addNumber}>
-    Add a number
-</button>
+<Info {...pkg} />
