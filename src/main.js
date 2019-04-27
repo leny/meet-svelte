@@ -1,6 +1,6 @@
 /* leny/meet-svelte
  *
- * /src/app.js - Entry point for svelte app
+ * /src/main.js - Entry point for svelte app
  *
  * coded by leny@flatLand!
  * started at 26/04/2019
@@ -12,7 +12,5 @@ const app = new App({
     target: document.querySelector("#root"),
     props: {},
 });
-
-window.app=app;
 
 export default app;
