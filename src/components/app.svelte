@@ -2,14 +2,20 @@
     <Nested answer={42} />
     <Info {...pkg} />
 
-    <ul>
-        {#each cats as cat (cat.id)}
-            <li>
-                <strong>{cat.name}:</strong>
-                <span>{nowYear - cat.birthYear}yo</span>
-            </li>
-        {/each}
-    </ul>
+    {#await promise}
+        <p>Please wait the cats...</p>
+    {:then cats}
+        <ul>
+            {#each cats as cat (cat.id)}
+                <li>
+                    <strong>{cat.name}:</strong>
+                    <span>{nowYear - cat.birthYear}yo</span>
+                </li>
+            {/each}
+        </ul>
+    {:catch}
+        <p>Oops.</p>
+    {/await}
 {:else}
     <p>Nothing to see here!</p>
 {/if}
@@ -27,14 +33,23 @@
         url: "https://svelte.dev",
     };
 
-    let showInfo = false;
+    let showInfo = false,
+        promise;
 
-    const toggle = () => (showInfo = !showInfo);
-
-    const cats = [
-        {id: "skitty", name: "Skitty", birthYear: 2010},
-        {id: "pixel", name: "Pixel", birthYear: 2013},
-    ];
+    const fetchCats = async () =>
+        new Promise(resolve =>
+            setTimeout(() => {
+                resolve([
+                    {id: "skitty", name: "Skitty", birthYear: 2010},
+                    {id: "pixel", name: "Pixel", birthYear: 2013},
+                ]);
+            }, 3000),
+        );
 
     const nowYear = new Date().getFullYear();
+
+    const toggle = async () => {
+        showInfo = !showInfo;
+        promise = fetchCats();
+    };
 </script>
