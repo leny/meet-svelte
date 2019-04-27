@@ -52,7 +52,7 @@
       "git add"
     ],
     "*.svelte": [
-      "npx prettier --write --parser=html",
+      "npx prettier --write",
       "git add"
     ]
   },
