@@ -1,14 +1,18 @@
 <p>
     The
     <code>{name}</code>
-    package is {speed} fast.
+    package is
+    {speed}
+    fast.
     <br />
-    Download version {version} at
-    <a href="{url}">{url}</a>
+    Download version
+    {version}
+    at
+    <a href={url}>{url}</a>
     .
     <br />
     Learn more on their
-    <a href="{url}">website</a>
+    <a href={url}>website</a>
 </p>
 
 <script>

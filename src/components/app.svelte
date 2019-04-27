@@ -1,9 +1,11 @@
 {#if showInfo}
-<Nested answer="{42}" />
-<Info {...pkg} />
+    <Nested answer={42} />
+    <Info {...pkg} />
+{:else}
+    <p>Nothing to see here!</p>
 {/if}
 
-<button on:click="{toggle}">{showInfo ? 'Hide' : 'Show'} informations</button>
+<button on:click={toggle}>{showInfo ? 'Hide' : 'Show'} informations</button>
 
 <script>
     import Nested from "./nested.svelte";
