@@ -46,6 +46,10 @@
     "*.js": [
       "npx eslint --fix --cache",
       "git add"
+    ],
+    "*.svelte": [
+      "npx prettier --write --parser=html",
+      "git add"
     ]
   },
   "husky": {

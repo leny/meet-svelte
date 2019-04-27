@@ -10,13 +10,6 @@
             "options": {
                 "tabWidth": 2
             }
-        },
-        {
-            "files": ["*.svelte", "*.html"],
-            "parser": "html",
-            "options": {
-                "tabWidth": 2
-            }
         }
     ]
 }
