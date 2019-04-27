@@ -1,14 +1,13 @@
 <script>
-    let count = 0, doubled;
+    let numbers=[1,2,3];
 
-    $: if (count >= 10) {
-        alert(`count is dangerously high!`);
-        count = 9;
-    }
+    const addNumber = () => numbers = [...numbers, (numbers.length + 1)];
 
-    const handleClick = () => count += 1;
+    $: sum = numbers.reduce((acc, itm)=> acc + itm, 0);
 </script>
 
-<button on:click={handleClick}>
-    Clicked {count} time{count > 1 ? "s" : ""}
+<p>{numbers.join(" + ")} = {sum}</p>
+
+<button on:click={addNumber}>
+    Add a number
 </button>
