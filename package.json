@@ -4,6 +4,9 @@
   "private": true,
   "description": "Just some Svelte test project, discovering the tech",
   "scripts": {
+    "lint:js": "npx eslint --fix --cache src",
+    "lint:svelte": "npx prettier --write src/**/*.svelte",
+    "lint": "run-p lint:js lint:svelte",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "serve:dev": "sirv public --dev",
@@ -33,6 +36,7 @@
     "lint-staged": "^8.1.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.0",
+    "prettier-plugin-svelte": "^0.3.0",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
